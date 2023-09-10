@@ -26,9 +26,13 @@ router.post("/register", async (req, res) => {
   });
 
 
+  //creating a login route
+  router.post("/login", async (req, res) => {
+    
+    const { username, password } = req.body;
+});
 
-  
-router.post("/login");
+
 
 
 export { router as userRouter };
