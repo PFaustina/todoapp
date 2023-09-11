@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
 
       await newUser.save();
 
-      res.json({ message: "User registered successfully" });
+      res.json({ message: "registered successfully" });
   });
 
 
@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
     const { username, password } = req.body;
 
     if (!user) {
-        return res.json({ message: "User does not exist" });
+        return res.json({ message: "does not exist" });
       }
       
       //compare password to see if password is valid
