@@ -35,9 +35,21 @@ router.post("/register", async (req, res) => {
         return res.json({ message: "User does not exist" });
       }
       
-      //compare password to see if its correct
+      //compare password to see if password is valid
 
       const isPasswordValid = await bcrypt.compare(password, user.password);
+
+
+        //login with incorrect infomation
+      if (!isPasswordValid) {
+        return res.json({ message: "Username or password is incorrect" });
+
+      }
+
+      //login with correct infomation
+      const token = jwt.sign({ id: user._id }, "secret");
+      res.json({ token, userID: user._id });
+   
 
 });
 
