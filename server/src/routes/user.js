@@ -28,8 +28,17 @@ router.post("/register", async (req, res) => {
 
   //creating a login route
   router.post("/login", async (req, res) => {
-    
+
     const { username, password } = req.body;
+
+    if (!user) {
+        return res.json({ message: "User does not exist" });
+      }
+      
+      //compare password to see if its correct
+
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+
 });
 
 
