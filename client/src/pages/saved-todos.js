@@ -1,4 +1,4 @@
-export const SaveTodos = () => {
+export const SavedTodos = () => {
     return <div>
         SaveTodo
     </div>
