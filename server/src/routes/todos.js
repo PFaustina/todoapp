@@ -16,6 +16,14 @@ router.get("/", async (req, res) => {
 
 
 
+  router.get("/", async (req, res) => {
+    try {
+      const response = await TodosModel.find({});
+      res.json(response);
+    } catch (err) {
+      res.json(err);
+    }
+  });
 
 
 
@@ -23,6 +31,6 @@ router.get("/", async (req, res) => {
 
 
 
-  
+
 
 export { router as todosRouter };
