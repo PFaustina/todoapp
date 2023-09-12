@@ -5,7 +5,14 @@ import { useCookies } from "react-cookie";
 
 export const Navbar = () => {
     const [cookies, setCookies] = useCookies(["access_token"]);
+    const navigate = useNavigate();
    
+    const logout = () => {
+        setCookies("access_token", "");
+        window.localStorage.clear();
+        navigate("/auth");
+      };
+
 
     return <div className="navbar">
         <Link to="/">Home</Link>
