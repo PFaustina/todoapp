@@ -4,11 +4,8 @@ const TodosSchema = new mongoose.Schema({
 
 
     //user
-     username: { type: String, required: true, unique: true },
-   
-   
-   //password
-     password: { type: String, required: true },
+     task: { type: String, required: true},
+
    
    });
    
