@@ -15,16 +15,18 @@ router.get("/", async (req, res) => {
   });
 
 
-
-  router.get("/", async (req, res) => {
+//save a todo task
+  router.put("/", async (req, res) => {
+    const todos = await TodosModel.findById(req.body.todoID);
+    const user = await UserModel.findById(req.body.userID);
     try {
-      const response = await TodosModel.find({});
-      res.json(response);
-    } catch (err) {
-      res.json(err);
-    }
-  });
-
+        user.savedTodos.push(todos);
+        await user.save();
+        res.json({ savedTodos: user.savedTodos });
+      } catch (err) {
+        res.json(err);
+      }
+    });
 
 
 
