@@ -4,13 +4,14 @@ import { Home } from "./pages/home";
 import { Auth } from "./pages/auth";
 import { CreateTodos } from "./pages/create-todos";
 import { SavedTodos } from "./pages/saved-todos";
-
+import { Navbar } from "./components/navbar";
 
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <Navbar />
         <Routes>
 
         <Route path="/" element={<Home />} />
