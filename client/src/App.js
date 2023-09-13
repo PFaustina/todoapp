@@ -1,29 +1,21 @@
-import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home } from "./pages/home";
-import { Auth } from "./pages/auth";
-import { CreateTodos } from "./pages/create-todos";
-import { SavedTodos } from "./pages/saved-todos";
+import "./App.css";
 import { Navbar } from "./components/navbar";
-
+import { Auth } from "./pages/auth";
+import { CreateTask } from "./pages/create-tasks";
+import { Home } from "./pages/home";
+import { SavedTasks } from "./pages/saved-tasks";
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar />
+        <Navbar />
         <Routes>
-
-        <Route path="/" element={<Home />} />
-
-
-        <Route path="/auth" element={<Auth />} />
-
-
-        <Route path="/create-todos" element={<CreateTodos />} />
-
-
-        <Route path="/saved-todos" element={<SavedTodos />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/create-task" element={<CreateTask />} />
+          <Route path="/saved-tasks" element={<SavedTasks />} />
+          <Route path="/auth" element={<Auth />} />
         </Routes>
       </Router>
     </div>
